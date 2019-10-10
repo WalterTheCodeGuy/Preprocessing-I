@@ -3,7 +3,13 @@
 @main-light: #f6f6f8;
 @main-medium: #e3e3e3;
 @main-dark: #313130;
+@red: #c60021;
 
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 /* General Styles */
 * {
@@ -48,9 +54,8 @@ header {
 	background-attachment: fixed;
 	
 	nav {
-		border-bottom: 1px solid #c60021;
+		border-bottom: 1px solid @red;
 		display: flex;
-		flex-direction: row;
 		justify-content: space-between;
 		position: fixed;
 		width: 100%;
@@ -61,7 +66,6 @@ header {
 		.links {
 			width: 60%;
 			display: flex;
-			flex-direction: row;
 			justify-content: space-evenly;
 			align-items: center;
 		}
@@ -73,7 +77,7 @@ header {
 		}
 		
 		a:hover {
-			color: #c60021;
+			color: @red;
 		}
 	}
 
@@ -89,35 +93,43 @@ header {
 
 	.title-container {
 		height: 80vh;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
+		.center();
 		text-align: center;
 	}
 	
 	.main-titles {
 		width: 40%;
 		color: @main-light;
+
+		h1 {
+			font-size: 5rem;
+		}
+
+		h2 {
+			font-size: 4rem;
+		}
+
+		h3 {
+			font-size: 3rem;
+		}
 	}
+
 }
 
 /* About Section Styles */
 #about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-	background-color: @main-medium;
+	.center();
+	background-color: @main-light;
 	
 	.text {
-		border: 1px solid #c60021;
+		border: 1px solid @red;
 		width: 60%;
 		background-color: @main-medium;
 		padding: 4%;
 		text-align: center;
 
 		h2 {
-			color: #c60021;
+			color: @red;
 		}
 
 		p {
@@ -129,18 +141,17 @@ header {
 /* Skills Section Styles */
 #skills {
 	background-color: @main-medium;
-	border-bottom: 1px solid #c60021;
-	border-top: 1px solid #c60021;
+	border-bottom: 1px solid @red;
+	border-top: 1px solid @red;
 
 	h2 {
-		color: #c60021;
+		color: @red;
 		text-align: center;
 		padding: 3% 0;
 	} // this ends the h2 style
 
 	.container {
 		display: flex;
-		flex-direction: row;
 		justify-content: space-around;
 	} // this ends the container style
 
@@ -157,17 +168,15 @@ header {
 
 /* Experience Section Styles */
 #experience {
-	background-color: white;
+	background-color: @main-light;
 	
 	h2 {
-		color: #c60021;
+		color: @red;
 		text-align: center;
 	} // this ends the h2 style
 
 	.big-container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		.center();
 	} // this ends the container style
 
 	.one {
@@ -194,58 +203,56 @@ footer {
   background-color: @main-medium;
   padding: 3% 0;
 	text-align: center;
+	border-top: 1px solid @red;
 	
 	h2 {
-		color: #c60021;
+		color: @red;
+	}
+	
+	div {
+		color: @main-dark;
+		display: flex;
+		justify-content: center;
 	}
 
-}
-
-footer div {
-	color: @main-dark;
-  display: flex;
-  justify-content: center;
-}
-
-form {
-  width: 80%;
-}
-
-input, label, textarea {
-  width: 100%;
-  margin: 4% 0;
-}
-
-input, textarea {
-  border: none;
-  border-bottom: 3px solid #c60021;
-  background-color: @main-medium;
-}
-
-footer nav {
-  width: 80%;
-}
-
-footer nav:hover {
-  color: #fde769;
-}
-
-button {
-  width: 100%;
-  background-color: @main-light;
-  color: #c60021;
-  padding: 2% 0;
-  border: 2px solid #c60021;
-  margin-bottom: 3%;
-}
-
-button:hover {
-  background-color: #c60021;
-  color: @main-light;
-  border:2px solid @main-light;
-}
-/* End Of Footer Section Styles */
-
+	form {
+		width: 80%;
+	}
+	
+	input, label, textarea {
+		width: 100%;
+		margin: 4% 0;
+	}
+	
+	input, textarea {
+		border: none;
+		border-bottom: 3px solid @red;
+		background-color: @main-medium;
+	}
+	
+	footer nav {
+		width: 80%;
+	}
+	
+	footer nav:hover {
+		color: #fde769;
+	}
+	
+	button {
+		width: 100%;
+		background-color: @main-light;
+		color: @red;
+		padding: 2% 0;
+		border: 2px solid @red;
+		margin-bottom: 3%;
+	}
+	
+	button:hover {
+		background-color: @red;
+		color: @main-light;
+		border:2px solid @main-light;
+	}
+} // this ends the footer styles
 
 /*media Query Styles */
 
@@ -262,10 +269,29 @@ button:hover {
   }
   
   .links {
-    width: 90%;
-  }
+		width: 90%;
+	}
+	
+	.links a {
+		padding-right: 2%;
+	}
   
   header {
     height: 80vh;
-  }
+	}
+
+	header .main-titles h1 {
+		font-size: 3rem;
+	}
+	header .main-titles h2 {
+		font-size: 2rem;
+	}
+	header .main-titles h3 {
+		font-size: 1.5rem;
+	}
+
+	.one h3, h4, p {
+		font-size: 1.2rem;
+	}
+
 }
