@@ -1,1 +1,257 @@
-/* Compile your LESS file! */
+@font-face {
+  font-family: 'Fjalla One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Fjalla One'), local('FjallaOne-Regular'), url(https://fonts.gstatic.com/s/fjallaone/v7/Yq6R-LCAWCX3-6Ky7FAFrOF6lw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Nunito Sans Regular'), local('NunitoSans-Regular'), url(https://fonts.gstatic.com/s/nunitosans/v5/pe0qMImSLYBIv1o4X1M8cce9I94.ttf) format('truetype');
+}
+/* General Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  line-height: 2;
+  font-size: 1.5rem;
+  font-family: 'Nunito Sans', sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: 3px;
+  padding: 4% 0;
+}
+section {
+  padding: 4% 0;
+}
+i {
+  font-size: 4rem;
+}
+/* Header Styles */
+header {
+  height: 90vh;
+  background-color: #e3e3e3;
+  background-image: url('../img/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+header nav {
+  border-bottom: 1px solid #c60021;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  background-color: #e3e3e3;
+  height: 10vh;
+  z-index: 999;
+}
+header nav .links {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+header nav a {
+  color: #313130;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+header nav a:hover {
+  color: #c60021;
+}
+header .logo {
+  width: 20%;
+  height: 100%;
+}
+header .logo img {
+  max-width: 100%;
+  height: 100%;
+}
+header .title-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+header .main-titles {
+  width: 40%;
+  color: #f6f6f8;
+}
+header .main-titles h1 {
+  font-size: 5rem;
+}
+header .main-titles h2 {
+  font-size: 4rem;
+}
+header .main-titles h3 {
+  font-size: 3rem;
+}
+/* About Section Styles */
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f8;
+}
+#about .text {
+  border: 1px solid #c60021;
+  width: 60%;
+  background-color: #e3e3e3;
+  padding: 4%;
+  text-align: center;
+}
+#about .text h2 {
+  color: #c60021;
+}
+#about .text p {
+  text-align: center;
+}
+/* Skills Section Styles */
+#skills {
+  background-color: #e3e3e3;
+  border-bottom: 1px solid #c60021;
+  border-top: 1px solid #c60021;
+}
+#skills h2 {
+  color: #c60021;
+  text-align: center;
+  padding: 3% 0;
+}
+#skills .container {
+  display: flex;
+  justify-content: space-around;
+}
+#skills .container div {
+  width: 25%;
+  text-align: center;
+}
+#skills i {
+  color: #313130;
+}
+/* Experience Section Styles */
+#experience {
+  background-color: #f6f6f8;
+}
+#experience h2 {
+  color: #c60021;
+  text-align: center;
+}
+#experience .big-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#experience .one {
+  width: 20%;
+}
+#experience .one h3,
+#experience .one h4 {
+  color: #313130;
+}
+#experience .three {
+  width: 50%;
+}
+#experience .three p {
+  color: #313130;
+}
+/* Footer Section Styles */
+footer {
+  background-color: #e3e3e3;
+  padding: 3% 0;
+  text-align: center;
+  border-top: 1px solid #c60021;
+}
+footer h2 {
+  color: #c60021;
+}
+footer div {
+  color: #313130;
+  display: flex;
+  justify-content: center;
+}
+footer form {
+  width: 80%;
+}
+footer input,
+footer label,
+footer textarea {
+  width: 100%;
+  margin: 4% 0;
+}
+footer input,
+footer textarea {
+  border: none;
+  border-bottom: 3px solid #c60021;
+  background-color: #e3e3e3;
+}
+footer footer nav {
+  width: 80%;
+}
+footer footer nav:hover {
+  color: #fde769;
+}
+footer button {
+  width: 100%;
+  background-color: #f6f6f8;
+  color: #c60021;
+  padding: 2% 0;
+  border: 2px solid #c60021;
+  margin-bottom: 3%;
+}
+footer button:hover {
+  background-color: #c60021;
+  color: #f6f6f8;
+  border: 2px solid #f6f6f8;
+}
+/*media Query Styles */
+@media (max-width: 800px) {
+  #about .text {
+    width: 80%;
+  }
+}
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .links {
+    width: 90%;
+  }
+  .links a {
+    padding-right: 2%;
+  }
+  header {
+    height: 80vh;
+  }
+  header .main-titles h1 {
+    font-size: 3rem;
+  }
+  header .main-titles h2 {
+    font-size: 2rem;
+  }
+  header .main-titles h3 {
+    font-size: 1.5rem;
+  }
+  .one h3,
+  h4,
+  p {
+    font-size: 1.2rem;
+  }
+}
